@@ -1,0 +1,28 @@
+!!! html
+html
+  head
+    title Two-Factor Authentication with Twilio, Node.js, and Socket.io
+    script(src='/socket.io/socket.io.js')
+    script(src='http://code.jquery.com/jquery-latest.js')
+    link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css') 
+    link(rel='stylesheet', href='/bootstrap/css/bootstrap-responsive.min.css') 
+  body
+    div.container
+      h1 Two-Factor Auth Demo
+      div.alert.alert-info#verify
+        h1 Verification Code:
+        br
+        div#code
+        br
+      div.row
+        div.span5
+          img#nyan(src='/bootstrap/poptart1red1.gif')
+          form.well#loginform
+            fieldset
+              legend Login to Access Secrets
+              div.control-group
+                input#username(placeholder='Username')
+                input#password(type='password',placeholder='Password')
+                input#phonenumber(placeholder='+18881234567')
+              div.form-actions
+                input#submit.btn.btn-primary(type='submit',value='Log In')

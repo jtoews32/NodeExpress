@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  
+    div.container
+      h1 Two-Factor Auth Demo
+      div.alert.alert-info#verify
+        h1 Verification Code:
+        br
+        div#code
+        br
+        
+        
