@@ -12,10 +12,6 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs'); //
 
 passport.use(new LocalStrategy(function(username, password, done) { 
-	if( username === 'admin') {
-		// res.redirect('/factor2');
-		
-	}
 	if (username === 'foo' && password === 'bar') {
 		done(null, { name: "Balto", key: "3333"  });
 	}
