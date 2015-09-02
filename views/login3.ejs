@@ -6,16 +6,15 @@
 <body>
 
 	<% if (!isAuthenticated) { %>
-		<div>Must log in</div> <br />
+		<a href="/login">Log in here Not Authenticated</a>
 	
 	<% } else { %>
-		Hello, <%= user.name %> <br />
+		Hello, <%= user.name %>
 	<% } %>
 	
 	
 	<form action="/login" method="post">
-		<input type="text" name="username" placeholder="Username"><br />
-		<input type="text" name="password" placeholder="Password">
+		<input type="text" name="pinnumber" placeholder="Pin Number"><br />
 		<input type="submit" value="Log In" >
 	</form>
 </body>

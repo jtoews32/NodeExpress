@@ -4,11 +4,20 @@
 	<title>Passport</title>
 </head>
 <body>
+
 	<% if (!isAuthenticated) { %>
 		<a href="/login">Log in here Not Authenticated</a>
 	
 	<% } else { %>
 		Hello, <%= user.name %>
 	<% } %>
+	
+	
+	<form action="/login" method="post">
+		<input type="text" name="phonenumber" placeholder="Phone Number"><br />
+		<input type="submit" value="Get PIN" >
+	</form>
 </body>
 </html>
+
+

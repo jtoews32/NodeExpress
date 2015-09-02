@@ -5,10 +5,11 @@
 </head>
 <body>
 	<% if (!isAuthenticated) { %>
-		<a href="/login">Log in here Not Authenticated</a>
+		<a href="/login">Log in failed. Try again!</a>
 	
 	<% } else { %>
 		Hello, <%= user.name %>
 	<% } %>
 </body>
 </html>
+

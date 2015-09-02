@@ -19,6 +19,7 @@
     "passport": "^0.3.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^1.0.2",
+    "passport-totp": "0.0.2",
     "serve-favicon": "^2.3.0",
     "should": "^7.0.4"
   }

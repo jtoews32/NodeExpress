@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Passport</title>
+</head>
+<body>
+
+	<% if (!isAuthenticated) { %>
+	
+		<div style="min-height: 20em; max-height: 20em;">You Aren't Authenticated</div>  
+	
+	<% } else { %>
+	
+	
+		<div style="min-height: 20em; max-height: 20em;">Hello, <%= user.name %></div>  
+	<% } %>
+	
+	
+	
+</body>
+</html>
+
+
