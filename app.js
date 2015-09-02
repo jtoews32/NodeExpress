@@ -6,7 +6,6 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var TotpStrategy = require('passport-totp').Strategy;
 
-
 var app = express();
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
@@ -24,7 +23,6 @@ passport.use(new LocalStrategy(function(username, password, done) {
 		done(null, false);
 	}
 }));
-
 
 passport.use(new TotpStrategy(
     function(user, done) {
@@ -87,8 +85,6 @@ app.post('/login',
     }
 );
 
-
-
 function ensureAuthenticated(req, res, next) {
 	if(req.isAuthenticated() ) {
 		next();  // bug here. doesn't work
@@ -101,10 +97,6 @@ app.get('/logout', function(req, res){
 	  req.logout();
 	  res.redirect('/');
 });
-
-
-
-
 
 app.get('/totp', isLoggedIn,
   function(req, res, next) {
@@ -129,35 +121,6 @@ app.post('/totp',
     req.session.secondFactor = 'totp';
     res.redirect('/');
 });
-		
-		
-		
-
-/*
-
-app.get('/api/data', ensureAuthenticated, function(req, res) {
-	res.json(
-			[ 
-				{ value: "foo"},
-				{ value: "bar"},
-				{ value: "suck"},
-			]
-	
-	);
-});
- 
-app.get('/success', function(req, res) {
-	console.log("Login Success");
-});
-
-app.get('/failure', function(req, res) {
-	console.log("Failure");
-});
-app.post('/login', passport.authenticate('local', { 
-  successRedirect: '/success',
-  failureRedirect: '/failure'
-}));
-*/
 
 function isLoggedIn(req, res, next) {
     if(req.isAuthenticated()) {
@@ -175,7 +138,6 @@ function ensureTotp(req, res, next) {
         res.redirect('/login');
     }
 }
-
 
 var port = process.env.PORT || 3000;
 app.listen(port, function() { 
